@@ -85,7 +85,16 @@ sudo ln -s ~/bin/GMT_4.5.14 /home/hlc/bin/GMT_4.5.14
 
 #copy programs, includes SiftGPU and built GDAL (the SiftGPU and gdal are compiled in this Docker machine)
 cp -r programs $HOME/programs
-export PATH=$HOME/programs/gdal-2.2.4/bin:$PATH
+#export PATH=$HOME/programs/gdal-2.2.4/bin:$PATH
+
+# install  GDAL Version is: GDAL 2.1.1
+wget http://download.osgeo.org/gdal/2.1.1/gdal-2.1.1.tar.gz
+tar -zxvf gdal-2.1.1.tar.gz
+cd gdal-2.1.1
+./configure --prefix=$HOME/programs/gdal-2.1.1_install
+make
+make install
+export PATH=$HOME/programs/gdal-2.1.1_install/bin:$PATH
 
 ##copy codes (projects)
 cp -r codes $HOME/codes
