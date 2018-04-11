@@ -37,6 +37,9 @@ sudo apt-get update && apt-get install -y --no-install-recommends \
 #RUN apt-get update && apt-get install -y --no-install-recommends\
 #    gdal-bin
 
+sudo apt-get update && apt-get install -y --no-install-recommends \
+    libnetcdf-dev
+
 sudo apt-get update && apt-get install -y --no-install-recommends\
     libopencv-dev \
     libfftw3-dev \
